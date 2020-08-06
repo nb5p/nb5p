@@ -5,7 +5,8 @@ on:
     branches: 
       - master
   schedule:
-    - cron: '0 0 * * *'
+    # Run every Monday at 09:00 (UTC)
+    - cron: '0 9 * * 1'
 
 jobs:
   update-readme:
@@ -16,3 +17,4 @@ jobs:
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+          SHOW_TITLE: false
